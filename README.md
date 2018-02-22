@@ -8,5 +8,5 @@ excel转xml用的vb，up主没有写过博客所以如果有幸被转载请注�
 使用环境:Excel 2007
 
 使用：
-配好了excel按 Alt + F8使用宏
-![image](.gif)
+excel按 Alt + F8使用宏
+![image](https://github.com/akukua/excel-to-xml-to-data-Project/blob/master/excel-to-xml-to-data/Gif/HowToUse.gif)
