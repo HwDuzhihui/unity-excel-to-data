@@ -10,5 +10,4 @@ excel转xml用的vb，up主没有写过博客所以如果有幸被转载请注�
 使用：
 excel选项里面默认位置改成你自己的xml文件夹
 excel按Alt + F8使用宏
-有问题联系邮箱370789792@qq.com
 ![image](https://github.com/akukua/excel-to-xml-to-data-Project/blob/master/excel-to-xml-to-data/Gif/HowToUse.gif)
