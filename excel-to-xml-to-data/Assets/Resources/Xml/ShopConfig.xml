@@ -1,0 +1,11 @@
+<root>
+    <!--1号-->
+    <node int_id="1" string_goods="AKM" float_attack="25.2" />
+
+    <!--2号-->
+    <node int_id="2" string_goods="AWM" float_attack="30" />
+
+    <!--3号-->
+    <node int_id="3" string_goods="M4A1" float_attack="15.2" />
+
+</root>

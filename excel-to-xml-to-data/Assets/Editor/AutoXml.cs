@@ -6,7 +6,13 @@ using System.Text;
 using System.IO;
 using System.Xml;
 
-public class AutoXml : Editor {
+/*
+ *  一键导表
+ *  
+ *  使用方法：配合tools,将xml导入Resources
+ *            生成Mono挂到场景
+ */
+public class EasyCodeAutoXml : Editor {
 
 
     static string m_XmlFile = Application.dataPath + "/Resources/Xml";
@@ -14,7 +20,7 @@ public class AutoXml : Editor {
     static string m_Tab = "    ";
 
 
-    [MenuItem("工具/生成Xml代码")]
+    [MenuItem("EasyCodeEditor/Create Xml Code")]
     public static void CreateCode()
     {
         DirectoryInfo direction = new DirectoryInfo(m_XmlFile);
@@ -60,7 +66,7 @@ public class AutoXml : Editor {
         sb.Append(m_Tab);
         sb.AppendLine("public static " + scriptName + " singleton" + "{ get{ return" + " m_" +scriptName + ";}}");
         sb.Append(m_Tab);
-        sb.AppendLine("public List<" + scriptName + "Info>" + " m_" + scriptName + "Info = new List<" + scriptName + "Info>();");
+        sb.AppendLine("public Dictionary<int," + scriptName + "Info>" + " m_" + scriptName + "Info = new Dictionary<int," + scriptName + "Info>();");
         sb.Append(m_Tab);
         sb.AppendLine();
         sb.Append(m_Tab);
@@ -107,7 +113,7 @@ public class AutoXml : Editor {
         {
             string[] s = nodeNames[i].Split('_');
             sb.Append(m_Tab + m_Tab + m_Tab + m_Tab + m_Tab);
-            sb.AppendLine("case \"" + s[1] +"\":");
+            sb.AppendLine("case \"" + nodeNames[i] + "\":");
 
             sb.Append(m_Tab + m_Tab + m_Tab + m_Tab + m_Tab + m_Tab);
             if (s[0].ToLower() == "int")
@@ -126,7 +132,7 @@ public class AutoXml : Editor {
         sb.Append(m_Tab + m_Tab + m_Tab);
         sb.AppendLine("}");
         sb.Append(m_Tab + m_Tab + m_Tab);
-        sb.AppendLine("m_" + scriptName + "Info.Add(info);" );
+        sb.AppendLine("m_" + scriptName + "Info[info.id] = info;" );
         sb.Append(m_Tab + m_Tab);
         sb.AppendLine("}");
         sb.Append(m_Tab);
