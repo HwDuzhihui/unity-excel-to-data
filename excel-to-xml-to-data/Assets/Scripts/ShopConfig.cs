@@ -8,6 +8,9 @@ public class ShopConfigInfo
     public int id;
     public string goods;
     public float attack;
+    public float[] attackUp;
+    public int[] levelUp;
+    public string[] descript;
 }
 
 public class ShopConfig : MonoBehaviour
@@ -44,6 +47,15 @@ public class ShopConfig : MonoBehaviour
                         break;
                     case "float_attack":
                         info.attack = float.Parse(s.Value);
+                        break;
+                    case "arrayFloat_attackUp":
+                        info.attackUp = System.Array.ConvertAll(s.Value.Split('_'),float.Parse);
+                        break;
+                    case "arrayInt_levelUp":
+                        info.levelUp = System.Array.ConvertAll(s.Value.Split('_'),int.Parse);
+                        break;
+                    case "arrayString_descript":
+                        info.descript = s.Value.Split('_');
                         break;
                 }
             }
