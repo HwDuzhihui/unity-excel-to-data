@@ -1,0 +1,5 @@
+﻿local Books = 
+{
+    { RoleId = 0, Name = "张飞", Speed = 1.08, Recruit = false, Skill = {2,3,4}, Descript = {"蛇矛斩","银月枪"}, Kill = {0.5,0.6}, Snake = {false,true} },
+    { RoleId = 1, Name = "赵云", Speed = 10.9, Recruit = true, Skill = {2,3,4}, Descript = {"蛇矛斩","银月枪"}, Kill = {0.8,0.9}, Snake = {false,false} }
+}
